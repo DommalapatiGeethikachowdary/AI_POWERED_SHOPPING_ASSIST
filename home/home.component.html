@@ -1,0 +1,28 @@
+<!-- Main content -->
+<div class="container-fluid content">
+  <div class="container"> <!-- pt-5 to account for fixed navbar height -->
+    <h2>Home</h2>
+
+    <!-- Search bar -->
+    <div class="row mb-4">
+      <div class="col-md-6 offset-md-3">
+        <input [(ngModel)]="searchQuery" (input)="onSearch()" type="text" class="form-control" placeholder="Search for items...">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let item of filteredItems">
+        <div class="card h-100"> <!-- Ensure cards have the same height -->
+          <img [src]="item.image" class="card-img-top img-fluid custom-img" alt="{{ item.name }}"> <!-- Custom class added -->
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+            <p class="card-text">Price: {{ item.price | currency:'USD' }}</p>
+            <p class="card-text">Rating: {{ item.rating }} / 5</p>
+            <button class="btn btn-primary" (click)="viewDetails(item)">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

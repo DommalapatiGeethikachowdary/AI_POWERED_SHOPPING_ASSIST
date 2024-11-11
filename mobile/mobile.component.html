@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2>Mobiles</h2>
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let mobile of mobiles">
+      <div class="card">
+        <div class="image-container position-relative">
+          <img [src]="mobile.image" class="card-img-top" alt="{{ mobile.name }}">
+          <i class="bi" 
+             [ngClass]="{'bi-heart-fill': isInWishlist(mobile), 'bi-heart': !isInWishlist(mobile), 'wishlist-icon': true}" 
+             (click)="toggleWishlist(mobile)"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ mobile.name }}</h5>
+          <p class="card-text">{{ mobile.description }}</p>
+          <p class="card-text">Price: {{ mobile.price | currency }}</p>
+          <p class="card-text">Rating: {{ mobile.rating }}</p>
+          <a routerLink="/product-detail" class="btn btn-primary"(click)="viewDetails(mobile)">view details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

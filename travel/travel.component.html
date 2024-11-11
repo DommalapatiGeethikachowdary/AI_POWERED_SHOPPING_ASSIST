@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2>Travel Destinations</h2>
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let country of countries">
+      <div class="card">
+        <div class="image-container position-relative">
+          <img [src]="country.image" class="card-img-top" alt="{{ country.name }}">
+          <i class="bi" 
+             [ngClass]="{'bi-heart-fill': isInWishlist(country), 'bi-heart': !isInWishlist(country), 'wishlist-icon': true}" 
+             (click)="toggleWishlist(country)"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ country.name }}</h5>
+          <p class="card-text">{{ country.description }}</p>
+          <p class="card-text">Price: {{ country.price | currency }}</p>
+          <p class="card-text">Rating: {{ country.rating }}</p>
+          <a routerLink="/travel-details" class="btn btn-primary" (click)="viewDetails(country)">book /tickets</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+
+<div class="container mt-5">
+    <h2>Search</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let searchitem of search">
+        <div class="card">
+          <div class="image-container position-relative">
+            <img [src]="searchitem.image" class="card-img-top" alt="{{ searchitem.name }}">
+            <!-- <i class="bi" 
+               [ngClass]="{'bi-heart-fill': isInWishlist(searchitem), 'bi-heart': !isInWishlist(searchitem), 'wishlist-icon': true}" 
+               (click)="toggleWishlist(searchitem)"></i> -->
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ searchitem.name }}</h5>
+            <p class="card-text">{{ searchitem.description }}</p>
+            <p class="card-text">Price: {{ searchitem.price | currency }}</p>
+            <p class="card-text">Rating: {{ searchitem.rating }}</p>
+            <a routerLink="/product-detail" class="btn btn-primary">view details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

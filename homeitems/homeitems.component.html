@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2>Home Items</h2>
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let item of homeItems">
+      <div class="card">
+        <div class="image-container position-relative">
+          <img [src]="item.image" class="card-img-top" alt="{{ item.name }}">
+          <i class="bi" 
+             [ngClass]="{'bi-heart-fill': isInWishlist(item), 'bi-heart': !isInWishlist(item), 'wishlist-icon': true}" 
+             (click)="toggleWishlist(item)"></i>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <p class="card-text">Price: {{ item.price | currency }}</p>
+          <p class="card-text">Rating: {{ item.rating }}</p>
+          <button class="btn btn-primary" (click)="viewDetails(item)">view details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

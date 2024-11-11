@@ -1,0 +1,16 @@
+/* layout/search/search.component.css */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  .search-bar input {
+    padding: 10px;
+    margin-right: 10px;
+    width: 300px;
+  }
+  .search-bar button {
+    padding: 10px;
+  }
+  

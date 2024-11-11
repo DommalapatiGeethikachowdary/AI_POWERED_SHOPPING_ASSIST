@@ -1,0 +1,79 @@
+<div class="header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/logo.png" width="100px" height="auto" alt="Logo">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dress" routerLinkActive="active">Dress</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/teddy" routerLinkActive="active">Toys</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/mobile" routerLinkActive="active">Mobile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/travel" routerLinkActive="active">Travel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/homeitems" routerLinkActive="active">Home Items</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Search bar inside the header -->
+    <div   class="form-inline ml-auto" >
+      <input class="form-control search-bar" type="search" [(ngModel)]="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light ml-2" type="submit" (click)="onSearch()">Search</button>
+    </div>
+    <button class="btn btn-outline-danger ml-2" (click)="logout()">Logout</button>
+  </nav>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+
+
+  <div (click)="togglePopup()" class="ask-eva-icon" *ngIf="!isVisible">
+    <img src="../assets/ai.png" alt="Ask EVA" class="chatbot-icon">
+</div>
+<div class="ask-eva-popup" *ngIf="isVisible" [class.ng-animating]="isVisible">
+    <div class="popup-header d-flex align-items-center">
+        <b class="paycentral flex-grow-1">Skyzy</b>
+        <i class="fa fa-close x_icon pointer" style="font-size: 1.2em;" (click)="togglePopups()"></i>
+    </div>
+    <div class="popup-body" #chatBody>
+        <div class="welcome-message">
+            <span>Hi, Welcome To Skyzy!</span>
+        </div>
+        <!-- <div class="container-fluid" *ngIf="images.length!=0">
+            <ngb-carousel>
+                <ng-template ngbSlide *ngFor="let slide of images; let i = index">
+                    <div class="wrapper">
+                        <img [src]="images[i]" alt="Random first slide" />
+                    </div>
+                    <div class="carousel-caption">
+                        <h3 style="color:black">First Slide</h3>
+                        <p>Angular 10 Carousel Example</p>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div> -->
+
+
+
+        <ng-container *ngFor="let message of messages">
+            <div class="message" [ngClass]="{'from': message.author === 'bot', 'to': message.author === 'user'}">
+                {{ message.content }}<br>
+                <!-- <p style="font-size: 10px;">{{ datetime }}</p> -->
+            </div>
+        </ng-container>
+    </div>
+    <div class="popup-footer">
+        <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" placeholder="Type your message..." />
+        <button [disabled]="!value" (click)="sendMessage()">Send</button>
+    </div>
+</div>
+</div>
+
+

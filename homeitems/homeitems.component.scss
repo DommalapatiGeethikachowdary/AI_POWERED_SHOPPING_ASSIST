@@ -1,0 +1,110 @@
+.image-container {
+    width: 100%;
+    height: 250px; /* Set a fixed height for the image container */
+    background-size: cover; /* Ensure the background covers the container */
+    background-position: center; /* Center the background image */
+    overflow: hidden; /* Hide overflow content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-img-top {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Cover the entire area while maintaining aspect ratio */
+  }
+  
+  .card-body {
+    height: 220px; /* Increased height to ensure the button is clearly visible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure proper spacing */
+  }
+  
+  .card-title, .card-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 0.5rem; /* Add some spacing between text elements */
+  }
+  
+  .btn-primary {
+    align-self: flex-start; /* Align button to the start (left) */
+  }
+  .wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+  
+    &.bi-heart-fill {
+      color: #ff0000;
+    }
+  
+    &:hover {
+      color: #ff4d4d;
+    }
+  }
+  
+  /* Notification styling */
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1050; /* Ensure it's above other content */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .bi-heart {
+    color: #ddd;
+  }
+  
+  .bi-heart-fill {
+    color: red;
+  }
+  /* Notification banner */
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #28a745; /* Green color */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Heart icon styles */
+  .wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .bi-heart {
+    color: rgb(17, 1, 1);
+  }
+  
+  .bi-heart-fill {
+    color: red;
+  }
+  

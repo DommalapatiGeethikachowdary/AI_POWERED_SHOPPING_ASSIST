@@ -1,0 +1,77 @@
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+  
+    &.bi-heart-fill {
+      color: #ff0000;
+    }
+  
+    &:hover {
+      color: #ff4d4d;
+    }
+  }
+  /* Notification banner */
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #28a745; /* Green color */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Heart icon styles */
+  .wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .bi-heart {
+    color: rgb(11, 3, 3);
+  }
+  
+  .bi-heart-fill {
+    color: red;
+  }
+  /* Wishlist icon styles */
+.wishlist-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.bi-heart {
+  color: rgb(24, 1, 1);
+}
+
+.bi-heart-fill {
+  color: red;
+}
+
+.product-details {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.product-details img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 5px;
+  background-color: #fff;
+}

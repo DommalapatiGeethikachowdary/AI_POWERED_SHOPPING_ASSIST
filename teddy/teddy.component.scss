@@ -1,0 +1,87 @@
+.image-container {
+  width: 100%;
+  height: 250px; /* Adjust height as needed */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-img-top {
+  width: auto; /* Maintain aspect ratio */
+  height: 100%; /* Adjust to the height of the container */
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+.card-body {
+  height: 220px; /* Adjust height to ensure the button is visible */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title, .card-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 0.5rem; /* Add spacing between text elements */
+}
+
+.btn-primary {
+  align-self: flex-start; /* Align button to the start (left) */
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &.bi-heart-fill {
+    color: #ff0000;
+  }
+
+  &:hover {
+    color: #ff4d4d;
+  }
+}
+
+/* Notification banner */
+.notification {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #28a745; /* Green color */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+/* Heart icon styles */
+.wishlist-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.bi-heart {
+  color: rgb(18, 1, 1);
+}
+
+.bi-heart-fill {
+  color: red;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
